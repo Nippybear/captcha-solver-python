@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                git branch: 'main', url: 'https://github.com/Nippybear/captcha-solver-python.git'
                 sh 'python3 main.py'
             }
         }
