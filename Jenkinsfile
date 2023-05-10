@@ -9,8 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/Nippybear/captcha-solver-python.git'
-                sh 'python3 main.py'
+                sh '''
+                cd /vagrant/captcha-solver-python
+                sudo pip3 install -r requirements.txt
+                sudo python3 -m pip install -r requirements.txt
+                sudo py -m pip install -r requirements.txt
+                '''
             }
         }
     }
