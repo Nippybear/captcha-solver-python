@@ -10,7 +10,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                cd /vagrant/captcha-solver-python
                 sudo pip3 install -r requirements.txt
                 sudo python3 -m pip install -r requirements.txt
                 sudo py -m pip install -r requirements.txt
